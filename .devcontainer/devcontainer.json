@@ -1,0 +1,41 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "Node.js & TypeScript",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "frontend",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // terminal
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        // format
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        // icon
+        "workbench.iconTheme": "vscode-icons",
+        "vsicons.dontShowNewVersionMessage": true,
+        // explorer
+        "explorer.confirmDelete": false
+      },
+      "extensions": [
+        // format
+        "esbenp.prettier-vscode",
+        // docker
+        "ms-azuretools.vscode-docker",
+        //  github actions
+        "github.vscode-github-actions",
+        // vscode-icons
+        "vscode-icons-team.vscode-icons"
+      ]
+    }
+  }
+}
